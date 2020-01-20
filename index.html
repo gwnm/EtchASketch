@@ -1,55 +1,21 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Etch-a-Sketch</title>
-
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86 viewport-fit=cover">
+  <title>Odin Project Etch-a-Sketch</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Open+Sans" rel="stylesheet">
 </head>
-
 <body>
-
-    <div id="etchasketch">
-
-        <div id="branding">
-
-            <!--<h1>Magic Screen</h1> -->
-
-        </div>
-
-        <div id="screen">
-
-
-
-        </div>
-
-        <div id="controls">
-
-            <div class="knob" id="left-knob"></div>
-
-            <div class="knob" id="right-knob"></div>
-
-        </div>
-
+  <div id="container">
+    <div id="div-screen"><!--New divs will be generated here--></div>
+    <div id="div-below-screen">
+      <button id="button-reset" class="below-screen-buttons">Reset</button>
+      <h1 id="h1-title">Odin-Sketch</h1>
+      <button id="button-toggle-colors" class="below-screen-buttons">Color</button>
     </div>
-
-    <p>use the left control to reset the board, and the right control to toggle colour mode</p>
-
+  </div>
+  <script src="script.js"></script>
 </body>
-
-<script src="script.js"></script>
-
-
-
 </html>

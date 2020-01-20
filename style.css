@@ -1,153 +1,210 @@
-body {
-
-    border: 0;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    color: #777;
-
-    font-size: 10pt;
-
-    background-color: #acb0b1;
-
-    min-height: 80vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-}
-
-#etchasketch {
-
-    width: 70vw;
-
-    height: 70vw;
-
-    margin-top: 4vh;
-
-    background-color: #b11e24;
-
-    background-image: repeating-linear-gradient(-32deg, rgb(177, 30, 36) 0%, rgb(220,48,55) 49%, rgba(220,66,55,0.5) 66%, rgb(177, 30, 36) 100%);
-
-    box-shadow: inset 2px -2px 2px 0px  rgba(255,255,255,0.3),inset -2px 2px 1px 0px rgba(0,0,0,0.2), 1px -2px 7px 2px rgba(0,0,0,0.2);
-
-    border-radius: 1vw;
-
-    align-self: center;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-}
-
-
-
-h1 {
-
-    text-align: center;
-
-    font-family: 'Cookie', cursive;
-
-    color:  #dfaf65;
-
-    text-shadow: 1px -0.5px 0px rgba(50,50,50,0.8),-0.5px 1px 0px RGBA(255,255,255,0.8)
-
-}
-
-
-
-#screen {
-
-    margin-top:5%;
-
-    background-color: #ececec;
-
-    background-image: repeating-linear-gradient(45deg, rgba(249,249,249,0.5) 0%, rgba(228,228,228, 0.5) 49%, rgba(215,215,215,0.5) 50%, rgba(255,255,255,0.5) 100%);
-
-    width: 80%;
-
-    height: 80%;
-
-    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75), 2px -2px 2px 0px  rgba(255,255,255,0.3),-2px 2px 1px 0px rgba(0,0,0,0.2);
-
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+  
+  /* Sections
+     ========================================================================== */
+  
+  /**
+   * Remove the margin in all browsers.
+   */
+  
+  body {
+    margin: 0;
+  }
+  
+  /**
+   * Render the `main` element consistently in IE.
+   */
+  
+  main {
+    display: block;
+  }
+  
+  /**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+  
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  
+  /* Forms
+     ========================================================================== */
+  
+  /**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+  
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
+  
+  /**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+  
+  button,
+  input { /* 1 */
+    overflow: visible;
+  }
+  
+  /**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+  
+  button,
+  select { /* 1 */
+    text-transform: none;
+  }
+  
+  /**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+  
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+  
+  /**
+   * Remove the inner border and padding in Firefox.
+   */
+  
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  
+  /**
+   * Restore the focus styles unset by the previous rule.
+   */
+  
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  
+  /* Begin custom CSS
+     ========================================================================== */
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /**
+  * This is the "body" of the odin-sketch.
+  */
+  
+  #container { 
+    width: 720px;
+    margin: 0 auto;
+    
+    padding-top: 2em;
+    padding-right: 2em;
+    padding-left: 2em;
+  
+    border-radius: 15px;
+  
+    background-color: red;
+  }
+  
+  #div-screen {
     display: grid;
-
-    grid-template-columns: repeat(16, 1fr);
-
-    grid-template-rows: repeat(16, 1fr);
-
-}
-
-
-
-.pixel {
-
-    background: black;
-
-    opacity: 0.0;
-
-    border: 1px solid rgba(0,0,0,0.1);
-
-}
-
-
-
-#controls {
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: row;
-
-    justify-content: space-between;
-
-}
-
-.knob {
-
-    background-color: white;
-
-    width: 8vw;
-
-    height: 8vw;
-
-    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75), inset 0px 0px 5px 5px #ffffff,inset 0px 0px 20px 10px #cccccc, 0px 0px 7px 2px rgba(0,0,0,0.3);
-
-    border-radius: 50%;
-
+  
+    border: 5px solid firebrick;
+  
+    background-color: lightgray;
+  
     cursor: pointer;
-
-}
-
-
-
-@media all and (orientation:landscape){
-
-    #etchasketch {
-
-        width: 70vh;
-
-        height: 70vh;
-
-    }
-
-    .knob {
-
-        width: 8vh;
-
-        height: 8vh;
-
-    }
-
-}
+  }
+  
+  /*
+  * .box forms the individual "pixels" of the screen.
+  * padding-top 100% ensures the divs are always square.
+  */
+  .box {
+    padding-top: 100%;
+  
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  #div-below-screen {
+    display: flex;
+    justify-content: space-between;
+  
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  
+  #h1-title {
+    font-family: 'Bungee Inline', cursive;
+    color: goldenrod;
+  }
+  
+  .below-screen-buttons {
+    font-family: 'Open Sans', sans-serif;
+  
+    border: 2px solid gray;
+    border-radius: 50%;
+    background-color: white;
+  
+    width: 80px;
+    height: 80px;
+  
+    padding-left: 1em;
+    padding-right: 1em;
+  
+    cursor: pointer;
+  }
+  
+  /*
+  * Removes the default focus outline (square box) and replaces it with a 
+  * box-shadow.
+  */
+  .below-screen-buttons:focus {
+    outline: none;
+  
+    box-shadow: 0 0 0 3px firebrick;
+  }
+  
+  #button-reset:active {
+    animation: spin 0.3s linear 1;
+  }
+  
+  /*
+  * -animate is added with JavaScript when a user clicks the element,
+  * then removed when the animation is complete. This allows the animation
+  * play to completion without requiring the user to hold the mouse button 
+  * down.
+  */
+  #button-toggle-colors-animate {
+    animation: spin 0.3s linear 1;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg);}
+    50% { transform: rotate(150deg);}
+    100% { transform: rotate(0deg);}
+  }
