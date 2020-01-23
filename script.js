@@ -105,7 +105,7 @@ btnReset.addEventListener('click', (event) => {
 });
 
 function promptUser() {
-  let gridSize = prompt('Give me a number up to 256 and I\'ll magically produce a number X number grid for you to draw on!', 16);
+  let gridSize = prompt('what size pad would you like to draw on!', 16);
 
   if(gridSize === null) { // If user clicks 'cancel', prompt goes away
     return;
